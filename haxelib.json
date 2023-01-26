@@ -1,0 +1,10 @@
+{
+    "name": "cffi-haxelib-example",
+    "url": "https://github.com/Just-Feeshy/CFFI-Haxelib-Example",
+    "tags": ["api", "example", "neko", "cpp"],
+    "description": "Example Haxe Library",
+    "version": "1.0.0",
+    "releasenote": "Initial Release",
+    "contributors": ["Feeshy"],
+    "dependencies": {}
+}

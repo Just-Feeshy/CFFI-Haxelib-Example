@@ -1,0 +1,6 @@
+[submodule "backend/lib/sdl"]
+	path = backend/lib/sdl
+	url = https://github.com/native-toolkit/libsdl
+[submodule "backend/lib/hashlink"]
+	path = backend/lib/hashlink
+	url = https://github.com/HaxeFoundation/hashlink
