@@ -1,6 +1,7 @@
 package examplelib.ui;
 
 import examplelib.native.backend.ExampleNativeCFFI;
+import examplelib.info.InitFlags;
 
 class BasicWindow {
     var handle:Dynamic;
@@ -10,10 +11,10 @@ class BasicWindow {
     }
 
     public static function init():Void {
-        var flags:Int;
+        var flags = 0;
 
-        flags |= 0x00000020;
-        flags |= 0x00004000;
+        flags |= cast InitFlags.INIT_VIDEO;
+        flags |= cast InitFlags.INIT_EVENTS;
 
         ExampleNativeCFFI.example_init_sdl(flags);
     }
