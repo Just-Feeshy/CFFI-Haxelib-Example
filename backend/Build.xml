@@ -5,6 +5,7 @@
 	<set name="mac" value="1" unless="mac" if="macos" />
 
     <set name="INCLUDE_SDL" value="1" />
+    <set name="INCLUDE_VULKAN" value="1" />
 
     <set name="OUTPUT_DIR" value="../ndll" unless="OUTPUT_DIR" />
     <set name="NATIVE_TOOLKIT_PATH" value="lib" unless="NATIVE_TOOLKIT_PATH" />
@@ -30,6 +31,12 @@
             <compilerflag value="-DHAVE_LIBC" />
         </section>
 
+        <section if="INCLUDE_VULKAN">
+            <compilerflag value="-DINCLUDE_VULKAN" />
+            <compilerflag value="-DVK_NO_PROTOTYPES" />
+			<compilerflag value="-Ilib/volk/" />
+        </section>
+
         <file name="src/system/CFFI.cpp" />
 		<file name="src/system/CFFIPointer.cpp" />
         <file name="src/hx/CFFIExt.cpp" />
@@ -48,6 +55,7 @@
 		<files id="examplelib" />
 
         <files id="native-toolkit-sdl" if="INCLUDE_SDL" unless="emscripten" />
+        <files id="spoopy-toolkit-volk" if="SPOOPY_VOLK" />
 
         <section unless="static_link">
             <ext value=".so" />

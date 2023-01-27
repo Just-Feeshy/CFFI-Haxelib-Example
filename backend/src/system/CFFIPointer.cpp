@@ -1,7 +1,7 @@
 #include <system/CFFIPointer.h>
 
 
-namespace lime {
+namespace example {
 
 
 	value CFFIPointer (void* ptr, hx::finalizer finalizer) {

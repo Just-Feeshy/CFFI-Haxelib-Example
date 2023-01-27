@@ -4,3 +4,6 @@
 [submodule "backend/lib/hashlink"]
 	path = backend/lib/hashlink
 	url = https://github.com/HaxeFoundation/hashlink
+[submodule "backend/lib/volk"]
+	path = backend/lib/volk
+	url = https://github.com/zeux/volk

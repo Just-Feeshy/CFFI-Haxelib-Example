@@ -13,7 +13,7 @@ namespace hx {
 }
 
 
-namespace lime {
+namespace example {
 
 
 	struct HL_CFFIPointer {
