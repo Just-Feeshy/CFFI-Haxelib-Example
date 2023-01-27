@@ -7,7 +7,7 @@ import lime.system.CFFI;
 class ExampleNativeCFFI {
     #if (cpp && !cppia)
     public static var example_init_sdl = cpp.Callable<Int->cpp.Void>(cpp.Prime._loadPrime("examplelib", "example_init_sdl", "iv", false));
-    public static var example_create_window = cpp.Callable<String->Int->Int->cpp.Object>("examplelib", "example_create_window", "siio", false);
+    public static var example_create_window = cpp.Callable<String->Int->Int->cpp.Object>(cpp.Prime._loadPrime("examplelib", "example_create_window", "siio", false));
 
     #elseif (neko || cppia)
     public static var example_init_sdl = CFFI.load("examplelib", "example_init_sdl", 1);
