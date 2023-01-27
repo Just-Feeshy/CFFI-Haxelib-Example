@@ -5,7 +5,7 @@
 #endif
 
 #ifdef INCLUDE_VULKAN
-#include <vulkan/vulkan.h>
+#include <volk.h>
 #endif
 
 namespace example {

@@ -18,6 +18,10 @@ namespace example {
     //Other
     void example_init_sdl(int flags) {
         SDL_Init(flags);
+
+        #ifdef INCLUDE_VULKAN
+        volkInitialize();
+        #endif
     }
     DEFINE_PRIME1v(example_init_sdl);
 

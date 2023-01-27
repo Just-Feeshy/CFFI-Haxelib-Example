@@ -34,7 +34,7 @@
         <section if="INCLUDE_VULKAN">
             <compilerflag value="-DINCLUDE_VULKAN" />
             <compilerflag value="-DVK_NO_PROTOTYPES" />
-			<compilerflag value="-Ilib/volk/" />
+			<compilerflag value="-Ilib/volk" />
         </section>
 
 		<file name="src/ui/BasicWindow.cpp" />
@@ -46,6 +46,7 @@
     </files>
 
     <include name="lib/sdl/files.xml" />
+	<include name="volk.xml" />
 
     <set name="DEBUGEXTRA" value="-debug" if="fulldebug" />
 	<set name="LIBSUFFIX" value="${HX_TARGET_SUFFIX}" if="HX_TARGET_SUFFIX" />
@@ -57,7 +58,7 @@
 		<files id="examplelib" />
 
         <files id="native-toolkit-sdl" if="INCLUDE_SDL" unless="emscripten" />
-        <files id="spoopy-toolkit-volk" if="SPOOPY_VOLK" />
+        <files id="spoopy-toolkit-volk" if="INCLUDE_VULKAN" />
 
         <section unless="static_link">
             <ext value=".so" />
