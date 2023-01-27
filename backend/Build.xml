@@ -37,6 +37,8 @@
 			<compilerflag value="-Ilib/volk/" />
         </section>
 
+		<file name="src/ui/BasicWindow.cpp" />
+
         <file name="src/system/CFFI.cpp" />
 		<file name="src/system/CFFIPointer.cpp" />
         <file name="src/hx/CFFIExt.cpp" />
