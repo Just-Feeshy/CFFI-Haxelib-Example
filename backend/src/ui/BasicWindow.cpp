@@ -2,7 +2,7 @@
 
 namespace example {
     BasicWindow::BasicWindow(const char* title, int width, int height) {
-        #ifdef INCLUDE_SDL
+        #if defined(INCLUDE_SDL) || defined(INCLUDE_SDL_LIB)
 
         int flags = 0;
 
@@ -16,7 +16,7 @@ namespace example {
     }
 
     BasicWindow::~BasicWindow() {
-        #ifdef INCLUDE_SDL
+        #if defined(INCLUDE_SDL) || defined(INCLUDE_SDL_LIB)
 
         if(sdl_window != nullptr) {
             SDL_DestroyWindow(sdl_window);

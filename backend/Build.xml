@@ -4,7 +4,8 @@
 
 	<set name="mac" value="1" unless="mac" if="macos" />
 
-    <set name="INCLUDE_SDL" value="1" />
+    <!--<set name="INCLUDE_SDL" value="1" />-->
+	<set name="INCLUDE_SDL_LIB" value="1" />
     <set name="INCLUDE_VULKAN" value="1" />
 
     <set name="OUTPUT_DIR" value="../ndll" unless="OUTPUT_DIR" />
@@ -30,6 +31,11 @@
 
             <compilerflag value="-DHAVE_LIBC" />
         </section>
+
+		<section if="INCLUDE_SDL_LIB">
+			<compilerflag value="-DINCLUDE_SDL_LIB" />
+			<compilerflag value="-LLibrary/Frameworks" />
+		</section>
 
         <section if="INCLUDE_VULKAN">
             <compilerflag value="-DINCLUDE_VULKAN" />
@@ -117,6 +123,8 @@
 				<vflag name="-framework" value="Carbon" />
 				<vflag name="-framework" value="AppKit" />
 				<vflag name="-framework" value="OpenAL" />
+
+				<lib name="-lSDL2" if="INCLUDE_SDL_LIB" />
 			</section>
         </section>
     </target>
